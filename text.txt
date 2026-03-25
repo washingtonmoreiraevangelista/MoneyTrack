@@ -1,0 +1,52 @@
+RF:
+ Usuário:
+
+- O usuário deve conseguir se cadastrar ✅
+
+- O usuário deve conseguir fazer login ✅
+
+- O usuário deve conseguir editar seu perfil
+
+ Gastos:
+
+- O usuário deve conseguir adicionar um gasto ✅
+
+- O usuário deve conseguir excluir um gasto ✅
+
+- O usuário deve visualizar lista de gastos ✅
+
+- O usuário deve visualizar total de gastos ✅
+
+
+ Dashboard:
+
+- O sistema deve exibir resumo dos gastos ✅
+
+- O sistema deve mostrar gráficos (por categoria, por mês) 
+
+- O sistema deve permitir filtrar gastos (data, categoria)
+
+
+
+RNF: 
+- segurança dos dados (criptografia) ✅
+
+- banco de dados Postegressql
+
+
+preciso criar:
+
+ - colocar paginação
+ - colocar busca por mes e poder selecionar por dias 
+ - fazer comparativos de mes que gastei mais 
+ 
+ - quando for no front nos select   type: "income" | "expense"; income seria rendar colocar salario 
+
+export type Transaction = {
+  userId: string;
+  title: string;
+  amount: number;
+  type: "income" | "expense";
+  category: Category;
+  createdDate: Date;
+};
