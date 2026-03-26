@@ -1,4 +1,5 @@
 import { UserRegisterRepository } from "../repository/registerUser.repository";
+import { CreateTransaction } from "../services";
 import { AuthenticateService } from "../services/authenticate.services";
 import { CreateUsers } from "../services/createRegister.services";
 import { Request, Response } from "express";
@@ -33,6 +34,31 @@ export async function loginUser(req: Request, res: Response) {
     const result = await service.execute({ email, password });
 
     return res.status(201).json(result);
+  } catch (error: any) {
+    return res.status(409).send({ message: error.message });
+  }
+}
+
+export async function updateUser(req: Request, res: Response) {
+  try {
+    const { id } = req.params as { id: string };
+    const { name, email, password, telefone } = req.body;
+
+    if(!name || !email || !password || !telefone) {
+      return res.status(400).json({ message: "At least one field must be provided for update" });
+    }
+
+    const updateUser = new CreateUsers(new UserRegisterRepository());
+
+    const result = await updateUser.updated(id, {
+      name,
+      email,
+      password,
+      telefone,
+    });
+    console.log("Usuário atualizado:", result);
+
+    return res.status(200).json(result);
   } catch (error: any) {
     return res.status(409).send({ message: error.message });
   }

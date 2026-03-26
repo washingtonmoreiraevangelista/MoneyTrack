@@ -21,7 +21,7 @@ export class GetTrasanctionsUsers {
     const transaction = await this.transactionRepository.findByUserId(userId);
     return transaction;
   }
-}
+}   
 
 export class DeleteTransactions {
   constructor(private transactionRepository: TransactionRepository) {}

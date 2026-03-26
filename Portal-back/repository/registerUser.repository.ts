@@ -34,4 +34,28 @@ export class UserRegisterRepository {
 
     return user;
   }
+
+  async updateUser(id: string, data: RegisterUser) {
+    const db = readData();
+
+    const users = db.users || [];
+
+    const index = users.findIndex(
+      (user: any) => user.id.trim() === id.trim(),
+    );
+
+    if (index === -1) {
+      throw new Error("User not found");
+    }
+
+    //atualizar os dados do usuário
+    users[index] = {
+      ...users[index],
+      ...data,
+    }
+
+    writeData(db);
+
+    return users[index];
+  }
 }
