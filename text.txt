@@ -5,7 +5,7 @@ RF:
 
 - O usuário deve conseguir fazer login ✅
 
-- O usuário deve conseguir editar seu perfil
+- O usuário deve conseguir editar seu perfil ✅
 
  Gastos:
 

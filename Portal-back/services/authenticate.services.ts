@@ -1,7 +1,17 @@
 import { AuthenticateRequest } from "../@types/authenticateRequest.types";
-import { generateToken } from "../middleware/verify-jwt";
 import { UserRegisterRepository } from "../repository/registerUser.repository";
+import { TokenPayload } from "../@types";
 import bcrypt from "bcrypt";
+import {
+  generateRefreshToken,
+  generateToken,
+  verifyRefreshToken,
+} from "../middleware/verify-jwt";
+import {
+  deleteRefreshToken,
+  findRefreshToken,
+  saveRefreshToken,
+} from "../utils/refreshToken";
 
 export class AuthenticateService {
   constructor(private userRegisterRepository: UserRegisterRepository) {}
@@ -19,13 +29,66 @@ export class AuthenticateService {
       throw new Error("E-mail ou senha inválidos");
     }
 
-    // Geramos o token com o ID e Email (sem a senha!)
-    const token = generateToken({
+    const payload: TokenPayload = {
       sub: user.id,
       email: user.email,
       isAdmin: user.isAdmin,
-    });
+    };
 
-    return { token };
+    const accessToken = generateToken(payload);
+    const refreshToken = generateRefreshToken(payload);
+
+    saveRefreshToken(user.id, refreshToken);
+
+    return {
+      accessToken,
+      refreshToken,
+    };
+  }
+}
+
+export class RefreshTokenService {
+  async execute(refreshToken: string) {
+    if (!refreshToken) {
+      throw new Error("Refresh token obrigatório");
+    }
+
+    try {
+      
+      const payload: TokenPayload = verifyRefreshToken(refreshToken);
+      //verifica se exite o token
+      const tokenExists = findRefreshToken(refreshToken);
+
+      if (!tokenExists) {
+        throw new Error("Refresh token inválido");
+      }
+
+      //  remove antigo (rotação)
+      await deleteRefreshToken(refreshToken);
+
+      //  gera novo refresh
+      const newRefreshToken = generateRefreshToken({
+        sub: payload.sub,
+        email: payload.email,
+        isAdmin: payload.isAdmin,
+      });
+
+      //salva novo token
+      await saveRefreshToken(payload.sub, newRefreshToken);
+
+      //gera novo token
+      const newAccessToken = generateToken({
+        sub: payload.sub,
+        email: payload.email,
+        isAdmin: payload.isAdmin,
+      });
+
+      return {
+        accessToken: newAccessToken,
+        refreshToken: newRefreshToken,
+      };
+    } catch {
+      throw new Error("Refresh token inválido ou expirado");
+    }
   }
 }

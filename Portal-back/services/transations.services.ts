@@ -1,5 +1,6 @@
 import { TransactionRepository } from "../repository";
 import { Transaction } from "../@types/transaction.type";
+import { TransactionFilters } from "../model";
 
 export class CreateTransaction {
   constructor(private transactionRepository: TransactionRepository) {}
@@ -17,8 +18,8 @@ export class CreateTransaction {
 export class GetTrasanctionsUsers {
   constructor(private transactionRepository: TransactionRepository) {}
 
-  async findTransaction(userId: string) {
-    const transaction = await this.transactionRepository.findByUserId(userId);
+  async findTransaction(filters: TransactionFilters) {
+    const transaction = await this.transactionRepository.findByUserId(filters);
     return transaction;
   }
 }   

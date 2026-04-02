@@ -1,7 +1,5 @@
 import { UserRegisterRepository } from "../repository/registerUser.repository";
-import { CreateTransaction } from "../services";
-import { AuthenticateService } from "../services/authenticate.services";
-import { CreateUsers } from "../services/createRegister.services";
+import { CreateUsers } from "../services/registerUser.services";
 import { Request, Response } from "express";
 
 export async function registerUsers(req: Request, res: Response) {
@@ -23,21 +21,6 @@ export async function registerUsers(req: Request, res: Response) {
   }
 }
 
-export async function loginUser(req: Request, res: Response) {
-  try {
-    const { email, password } = req.body;
-
-    console.log("Tentativa de login:", { email, password });
-
-    const service = new AuthenticateService(new UserRegisterRepository());
-
-    const result = await service.execute({ email, password });
-
-    return res.status(201).json(result);
-  } catch (error: any) {
-    return res.status(409).send({ message: error.message });
-  }
-}
 
 export async function updateUser(req: Request, res: Response) {
   try {

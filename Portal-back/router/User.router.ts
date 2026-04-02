@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { loginUser, registerUsers, updateUser } from "../controller/users.controller";
+import { registerUsers, updateUser } from "../controller/users.controller";
 import { authMiddleware } from "../middleware/authMiddleware";
+import { loginUser, refresh } from "../controller";
 
 export const UserRouter = Router();
 
 UserRouter.post("/register", registerUsers);
 UserRouter.post("/login", loginUser);
-UserRouter.put("/profile/:id", authMiddleware, updateUser);
+UserRouter.patch("/profile/:id", authMiddleware, updateUser);
+UserRouter.post("/refreshToken",authMiddleware, refresh);
 

@@ -44,10 +44,23 @@ export async function getTransaction(req: AuthRequest, res: Response) {
     if (!userId) {
       return res.status(401).json({ message: "Usuário não autenticado" });
     }
+
+    const { category, startDate, endDate, groupBy } = req.query;
+
     const getAllTrasanctionsUser = new GetTrasanctionsUsers(
       new TransactionRepository(),
     );
-    const transaction = await getAllTrasanctionsUser.findTransaction(userId);
+
+    const filters = {
+      userId,
+      ...(category && { category: category as string }),
+      ...(startDate && { startDate: startDate as string }),
+      ...(endDate && { endDate: endDate as string }),
+      ...(groupBy && { groupBy: groupBy as "category" | "month" }),
+    };
+
+    const transaction = await getAllTrasanctionsUser.findTransaction(filters);
+
     return res.status(200).json(transaction);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });
@@ -66,9 +79,11 @@ export async function balanceTransaction(req: AuthRequest, res: Response) {
       new TransactionRepository(),
     );
 
-    const transaction = await getAllTrasanctionsUser.findTransaction(userId);
+    const transaction = await getAllTrasanctionsUser.findTransaction({
+      userId,
+    });
 
-    const balance = calculateDashboard(transaction.listTransaction);
+    const balance = calculateDashboard(transaction);
 
     console.log("balance:", balance);
 

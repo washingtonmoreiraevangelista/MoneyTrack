@@ -4,12 +4,242 @@
       "id": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
       "name": "ff",
       "email": "caca@gmail.com",
-      "password": "$2b$08$wpBKj1odEL4P40UitrzOYuQSvx.vJaZxUjdYiNRdTHlCIh755wBbS",
+      "password": "$2b$08$uXKqtBFF0aTSnYnx4Qev4OvA1IBRJFHhG5mkLmbgfrOKO8Q1Z6B26",
       "telefone": "971724115",
+      "isAdmin": false
+    },
+    {
+      "id": "de6b1da7-826b-4ab4-9696-f6be49e4c7d9",
+      "name": "",
+      "email": "",
+      "password": "$2b$08$2F9rCFf7Pzo7YyYC0vGUOuc6VNR2VM9QXQ/VcGT2N7hS0kpEGQeVq",
+      "telefone": "",
+      "isAdmin": false
+    },
+    {
+      "id": "0da229a4-2025-46c8-97c4-4817e2d2679d",
+      "name": "bruno",
+      "email": "bruna@gmail.com",
+      "password": "$2b$08$BeAhlGfDGnnIp2EaMwNVqObWsw65TXJqDAyBv/L3sdwB/44iraYj2",
+      "telefone": "71724115",
       "isAdmin": false
     }
   ],
+  "refreshToken": [
+    {
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNjgyNWE4Ni00ZjZlLTRhZTAtYjdmMC04NWU1MjBmYjZjMjQiLCJlbWFpbCI6ImNhY2FAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTc3NTEzNjk4MSwiZXhwIjoxNzc1NzQxNzgxfQ.76V6xqcE1kex32XTetmGBRmFpWAbuxP90mmOF_iIBZ0",
+      "createdAt": "2026-04-02T13:36:21.870Z"
+    }
+  ],
   "transaction": [
+    {
+      "id": "1a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "groceries",
+      "amount": 450,
+      "type": "expense",
+      "category": "food",
+      "createdDate": "2026-01-15T12:00:00.000Z"
+    },
+    {
+      "id": "2a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "restaurant",
+      "amount": 200,
+      "type": "expense",
+      "category": "food",
+      "createdDate": "2026-02-08T13:00:00.000Z"
+    },
+    {
+      "id": "2a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "cinema",
+      "amount": 90,
+      "type": "expense",
+      "category": "leisure",
+      "createdDate": "2026-02-20T20:00:00.000Z"
+    },
+    {
+      "id": "3a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "electricity",
+      "amount": 180,
+      "type": "expense",
+      "category": "house",
+      "createdDate": "2026-03-03T09:00:00.000Z"
+    },
+    {
+      "id": "3a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "gym",
+      "amount": 120,
+      "type": "expense",
+      "category": "others",
+      "createdDate": "2026-03-18T18:00:00.000Z"
+    },
+    {
+      "id": "4a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "supermarket",
+      "amount": 500,
+      "type": "expense",
+      "category": "food",
+      "createdDate": "2026-04-10T11:00:00.000Z"
+    },
+    {
+      "id": "4a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "netflix",
+      "amount": 55,
+      "type": "expense",
+      "category": "leisure",
+      "createdDate": "2026-04-22T21:00:00.000Z"
+    },
+    {
+      "id": "5a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "water bill",
+      "amount": 100,
+      "type": "expense",
+      "category": "house",
+      "createdDate": "2026-05-05T08:00:00.000Z"
+    },
+    {
+      "id": "5a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "trip",
+      "amount": 800,
+      "type": "expense",
+      "category": "leisure",
+      "createdDate": "2026-05-20T14:00:00.000Z"
+    },
+    {
+      "id": "6a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "groceries",
+      "amount": 480,
+      "type": "expense",
+      "category": "food",
+      "createdDate": "2026-06-07T10:00:00.000Z"
+    },
+    {
+      "id": "6a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "clothes",
+      "amount": 300,
+      "type": "expense",
+      "category": "others",
+      "createdDate": "2026-06-25T16:00:00.000Z"
+    },
+    {
+      "id": "7a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "internet",
+      "amount": 120,
+      "type": "expense",
+      "category": "house",
+      "createdDate": "2026-07-02T09:00:00.000Z"
+    },
+    {
+      "id": "7a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "bar",
+      "amount": 150,
+      "type": "expense",
+      "category": "leisure",
+      "createdDate": "2026-07-14T22:00:00.000Z"
+    },
+    {
+      "id": "8a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "supermarket",
+      "amount": 530,
+      "type": "expense",
+      "category": "food",
+      "createdDate": "2026-08-11T10:00:00.000Z"
+    },
+    {
+      "id": "8a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "gift",
+      "amount": 200,
+      "type": "expense",
+      "category": "others",
+      "createdDate": "2026-08-19T19:00:00.000Z"
+    },
+    {
+      "id": "9a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "gas",
+      "amount": 250,
+      "type": "expense",
+      "category": "house",
+      "createdDate": "2026-09-06T08:00:00.000Z"
+    },
+    {
+      "id": "9a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "concert",
+      "amount": 300,
+      "type": "expense",
+      "category": "leisure",
+      "createdDate": "2026-09-21T20:00:00.000Z"
+    },
+    {
+      "id": "10a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "groceries",
+      "amount": 470,
+      "type": "expense",
+      "category": "food",
+      "createdDate": "2026-10-10T10:00:00.000Z"
+    },
+    {
+      "id": "10a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "shoes",
+      "amount": 350,
+      "type": "expense",
+      "category": "others",
+      "createdDate": "2026-10-25T15:00:00.000Z"
+    },
+    {
+      "id": "11a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "rent",
+      "amount": 1200,
+      "type": "expense",
+      "category": "house",
+      "createdDate": "2026-11-05T10:00:00.000Z"
+    },
+    {
+      "id": "11a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "black friday",
+      "amount": 900,
+      "type": "expense",
+      "category": "others",
+      "createdDate": "2026-11-28T12:00:00.000Z"
+    },
+    {
+      "id": "12a1",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "christmas dinner",
+      "amount": 600,
+      "type": "expense",
+      "category": "food",
+      "createdDate": "2026-12-24T20:00:00.000Z"
+    },
+    {
+      "id": "12a2",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "vacation",
+      "amount": 1500,
+      "type": "expense",
+      "category": "leisure",
+      "createdDate": "2026-12-28T10:00:00.000Z"
+    },
     {
       "id": "ea57be45-b77d-4e12-a2b7-0a06db6ed3a6",
       "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
@@ -72,6 +302,24 @@
       "type": "income",
       "category": "others",
       "createdDate": "2026-03-25T13:34:56.389Z"
+    },
+    {
+      "id": "f90010af-2475-45ac-a1bd-65864919c0ba",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "salario",
+      "amount": 5000,
+      "type": "income",
+      "category": "others",
+      "createdDate": "2026-03-31T20:38:47.194Z"
+    },
+    {
+      "id": "4b0a6f6a-d953-4504-acef-cf4420a60fd3",
+      "userId": "26825a86-4f6e-4ae0-b7f0-85e520fb6c24",
+      "title": "rent",
+      "amount": 1200,
+      "type": "expense",
+      "category": "house",
+      "createdDate": "2026-04-02T13:32:23.999Z"
     }
   ]
 }

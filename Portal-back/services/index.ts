@@ -1,3 +1,3 @@
 export * from "./authenticate.services"
-export * from "./createRegister.services"
+export * from "./registerUser.services"
 export * from "./transations.services"

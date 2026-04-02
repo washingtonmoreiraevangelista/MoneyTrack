@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { verifyToken } from "./verify-jwt";
+import { verifyAccessToke } from "./verify-jwt";
 
 const SECRET = process.env.JWT_SECRET as string;
 
@@ -8,19 +8,18 @@ export function authMiddleware(
   res: Response,
   next: NextFunction,
 ) {
-  const authHeader = req.headers.authorization;
+  const token = req.headers.authorization?.split(" ")[1];
 
-  if (!authHeader) {
+  if (!token) {
     return res.status(401).json({ message: "Token não informado" });
   }
 
-  const [, token] = authHeader.split(" ");
 
   try {
-    const decoded = verifyToken(token);
+    const payload = verifyAccessToke(token);
 
     (req as any).user = {
-      userId: decoded.sub,
+      userId: payload.sub,
     };
 
     next();

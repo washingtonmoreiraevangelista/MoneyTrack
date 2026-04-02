@@ -4,6 +4,9 @@ Sistema de controle de gastos pessoais onde o usuário pode cadastrar e gerencia
 
 ---
 
+## Rodar o projeto
+- npm run dev 
+
 ##  Funcionalidades
 
 - Cadastro de usuário

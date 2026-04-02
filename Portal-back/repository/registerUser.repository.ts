@@ -35,7 +35,7 @@ export class UserRegisterRepository {
     return user;
   }
 
-  async updateUser(id: string, data: RegisterUser) {
+  async updateUser(id: string, data: Partial<RegisterUser>) {
     const db = readData();
 
     const users = db.users || [];
